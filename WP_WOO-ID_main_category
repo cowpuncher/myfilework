@@ -1,0 +1,7 @@
+// Проверялось на странице товара
+?php  $terms = get_the_terms( $post->ID, 'product_cat' );
+            foreach ($terms as $term) {
+            echo $product_cat_id = $term->term_id;
+            break;
+            }
+?>
