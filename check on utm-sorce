@@ -1,0 +1,29 @@
+<?php 
+                                function returns_reference() {
+                                    $url = $_SERVER['REQUEST_URI'];
+                                    $parseUrl = parse_url($url);
+                                    $arrParseUrl = explode("/", $parseUrl['path']);
+                                    $elUrl = 'utm_medium=cpc';
+                
+                                    foreach($arrParseUrl as $arrUrl) {
+                                        if($arrUrl == 'utm_medium=cpc') {
+                                            return $arrUrl;
+                                        }
+                                    }
+                                }
+                                $newref = returns_reference();
+                                if($newref == 'utm_medium=cpc') {
+                            ?>
+                                <a href="mailto:" type="email" >
+                                  ЕСТЬ МЕТКА
+                                </a>
+                            <?php    
+                                } else {
+                             ?>
+                                  
+                                <a href="mailto:" type="email" >
+                                  ЕСТЬ МЕТКА
+                                </a>
+                            <?php
+                                }
+                            ?>
